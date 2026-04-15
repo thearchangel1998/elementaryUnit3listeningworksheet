@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Practice: Fill in the Blanks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .input-blank {
+            width: 140px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .input-blank:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Fade in animation for tabs */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen p-4 md:p-8 font-sans text-slate-800">
+
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- Header -->
+        <div class="bg-blue-600 rounded-2xl shadow-lg p-6 md:p-8 text-white flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold mb-2">Listening Practice</h1>
+                <p class="text-blue-100">Listen to the conversations and fill in the missing words.</p>
+            </div>
+            <div class="hidden md:flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex space-x-2 border-b-2 border-slate-200 px-2">
+            <button onclick="switchTab('tab-part-1')" id="btn-tab-part-1" class="tab-btn px-6 py-3 text-lg font-bold rounded-t-xl transition-colors border-b-4 border-blue-600 text-blue-700 bg-white">
+                Part 1 (Conv 1-3)
+            </button>
+            <button onclick="switchTab('tab-part-2')" id="btn-tab-part-2" class="tab-btn px-6 py-3 text-lg font-bold rounded-t-xl transition-colors border-b-4 border-transparent text-slate-500 hover:bg-slate-200/50">
+                Part 2 (Conv 4-6)
+            </button>
+        </div>
+
+        <!-- TAB 1 CONTENT -->
+        <div id="tab-part-1" class="tab-content block space-y-6 animate-fade-in">
+            <!-- Conversation 1 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-1">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 1</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">5 blanks</span>
+                </div>
+                <div class="space-y-4 text-lg leading-relaxed text-slate-700">
+                    <p><span class="font-bold text-slate-900">A:</span> Are you OK?</p>
+                    <p><span class="font-bold text-slate-900">B:</span> No. I have a <span class="font-bold text-slate-400">(1)</span> <input type="text" data-answer="headache" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>. I need something for it.</p>
+                    <p><span class="font-bold text-slate-900">A:</span> Sorry. I don't have anything.</p>
+                    <p><span class="font-bold text-slate-900">B:</span> Is there a <span class="font-bold text-slate-400">(2)</span> <input type="text" data-answer="chemist" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> near here?</p>
+                    <p><span class="font-bold text-slate-900">A:</span> Yes of course. There's one behind here, on 21st Street.</p>
+                    <p><span class="font-bold text-slate-900">B:</span> OK. Where's that?</p>
+                    <p><span class="font-bold text-slate-900">A:</span> The next street <span class="font-bold text-slate-400">(3)</span> <input type="text" data-answer="behind" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> us. Go out of here and turn left. At the end of the road turn left and it's the first left again. There's a small <span class="font-bold text-slate-400">(4)</span> <input type="text" data-answer="food" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> shop on the corner and the <span class="font-bold text-slate-400">(5)</span> <input type="text" data-answer="chemist" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> is next to that.</p>
+                    <p><span class="font-bold text-slate-900">B:</span> OK. Thank you.</p>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-1')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 1
+                    </button>
+                    <div id="score-conv-1" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversation 2 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-2">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 2</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">5 blanks</span>
+                </div>
+                <div class="space-y-4 text-lg leading-relaxed text-slate-700">
+                    <p><span class="font-bold text-slate-900">C:</span> I need to do some <span class="font-bold text-slate-400">(6)</span> <input type="text" data-answer="exercise" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>. I usually do something every day. Is there a pool or a gym near here?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> There isn't really anything in this area. You need to go to Newtown - there's a <span class="font-bold text-slate-400">(7)</span> <input type="text" data-answer="sports center" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t w-32" placeholder="..."></input> there.</p>
+                    <p><span class="font-bold text-slate-900">C:</span> OK, nice. Where's Newtown?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Oh, you need to take the bus. There's a stop at the end of the road.</p>
+                    <p><span class="font-bold text-slate-900">C:</span> OK. What number?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Number <span class="font-bold text-slate-400">(8)</span> <input type="text" data-answer="15" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t !w-16" placeholder="..."></input>. It's the only bus. Go to the end of the road and turn right. The stop's about 50 <span class="font-bold text-slate-400">(9)</span> <input type="text" data-answer="meters" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> down the road but on the opposite side. You need to cross the road. The stop is in <span class="font-bold text-slate-400">(10)</span> <input type="text" data-answer="front" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> of a school.</p>
+                    <p><span class="font-bold text-slate-900">C:</span> Oh, OK. Thanks.</p>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-2')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 2
+                    </button>
+                    <div id="score-conv-2" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversation 3 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-3">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 3</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">5 blanks</span>
+                </div>
+                <div class="space-y-4 text-lg leading-relaxed text-slate-700">
+                    <p><span class="font-bold text-slate-900">E:</span> Is there a <span class="font-bold text-slate-400">(11)</span> <input type="text" data-answer="bookshop" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> near here? I forgot my book and I don't have anything to read.</p>
+                    <p><span class="font-bold text-slate-900">F:</span> No, sorry, but maybe try Jeffer's. It's a <span class="font-bold text-slate-400">(12)</span> <input type="text" data-answer="department store" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t w-40" placeholder="..."></input> I think they sell books - but I'm not sure.</p>
+                    <p><span class="font-bold text-slate-900">E:</span> OK. Where's that?</p>
+                    <p><span class="font-bold text-slate-900">F:</span> It's on High Street. It's the main road in the <span class="font-bold text-slate-400">(13)</span> <input type="text" data-answer="center" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> of town.</p>
+                    <p><span class="font-bold text-slate-900">E:</span> OK. Sorry, can you show me on the map?</p>
+                    <p><span class="font-bold text-slate-900">F:</span> Yes, sure. Look. We're here - and this is High Street. The department store's on the left. It's next to another big shop which is closed now and <span class="font-bold text-slate-400">(14)</span> <input type="text" data-answer="empty" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                    <p><span class="font-bold text-slate-900">E:</span> Great, thanks. I always bring a book on holiday. I <span class="font-bold text-slate-400">(15)</span> <input type="text" data-answer="hate" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> having nothing to read.</p>
+                    <p><span class="font-bold text-slate-900">F:</span> Yes, me too.</p>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-3')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 3
+                    </button>
+                    <div id="score-conv-3" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2 CONTENT -->
+        <div id="tab-part-2" class="tab-content hidden space-y-6 animate-fade-in">
+            <!-- Conversation 4 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-4">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 4</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">5 blanks</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 text-lg leading-relaxed text-slate-700">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <p><span class="font-bold text-slate-900">A:</span> Hey - you're back.</p>
+                        <p><span class="font-bold text-slate-900">B:</span> Yeah ... Oh man - look at this place ...</p>
+                        <p><span class="font-bold text-slate-900">A:</span> What?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> It's a mess. You never keep things <span class="font-bold text-slate-400">(1)</span> <input type="text" data-answer="tidy" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Those are dirty clothes. I need to wash them.</p>
+                        <p><span class="font-bold text-slate-900">B:</span> OK, fine, so ... er ... so when?</p>
+                        <p><span class="font-bold text-slate-900">A:</span> What?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> When are you going to wash them?</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Later.</p>
+                        <p><span class="font-bold text-slate-900">B:</span> Really? But can you <span class="font-bold text-slate-400">(2)</span> <input type="text" data-answer="pick up" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> your things from the floor?</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Can you wait? I'm on this game.</p>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <p><span class="font-bold text-slate-900">B:</span> I can't get to my bed without <span class="font-bold text-slate-400">(3)</span> <input type="text" data-answer="breaking" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> something!</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Just move everything to my <span class="font-bold text-slate-400">(4)</span> <input type="text" data-answer="side" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> of the room. I can tidy up later.</p>
+                        <p><span class="font-bold text-slate-900">B:</span> OK, fine!</p>
+                        <p><span class="font-bold text-slate-900">A:</span> How was your <span class="font-bold text-slate-400">(5)</span> <input type="text" data-answer="trip" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> It was good, but I'm tired.</p>
+                        <p><span class="font-bold text-slate-900">A:</span> What?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> I'm tired.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-4')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 4
+                    </button>
+                    <div id="score-conv-4" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversation 5 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-5">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 5</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">4 blanks</span>
+                </div>
+                <div class="space-y-4 text-lg leading-relaxed text-slate-700">
+                    <p><span class="font-bold text-slate-900">C:</span> Is the <span class="font-bold text-slate-400">(6)</span> <input type="text" data-answer="heating" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> on?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Yeah, I turned it on ten minutes ago.</p>
+                    <p><span class="font-bold text-slate-900">C:</span> It's cold. I think it's <span class="font-bold text-slate-400">(7)</span> <input type="text" data-answer="broken" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Are you sure?</p>
+                    <p><span class="font-bold text-slate-900">C:</span> Yeah, it's not working.</p>
+                    <p><span class="font-bold text-slate-900">D:</span> We need to call someone to <span class="font-bold text-slate-400">(8)</span> <input type="text" data-answer="repair" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> it. We can't stay here without heating.</p>
+                    <p><span class="font-bold text-slate-900">C:</span> I know. I'm cold now ... Can you call?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Why me?</p>
+                    <p><span class="font-bold text-slate-900">C:</span> Your English is better than <span class="font-bold text-slate-400">(9)</span> <input type="text" data-answer="mine" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Really?</p>
+                    <p><span class="font-bold text-slate-900">C:</span> Yeah - please?</p>
+                    <p><span class="font-bold text-slate-900">D:</span> Sure.</p>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-5')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 5
+                    </button>
+                    <div id="score-conv-5" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversation 6 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-slate-200" id="conv-6">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <h2 class="text-xl font-bold text-blue-700">Conversation 6</h2>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">5 blanks</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 text-lg leading-relaxed text-slate-700">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <p><span class="font-bold text-slate-900">A:</span> What did he say?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> 'It's not you, it's me.'</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Oh ... and what was that?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> 'I don't love you anymore.'</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Can you <span class="font-bold text-slate-400">(10)</span> <input type="text" data-answer="stop" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> it for a second?</p>
+                        <p><span class="font-bold text-slate-900">B:</span> Sure.</p>
+                        <p><span class="font-bold text-slate-900">A:</span> Hey, you two. Can you stop talking? I <span class="font-bold text-slate-400">(11)</span> <input type="text" data-answer="can't" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input> hear the film.</p>
+                        <p><span class="font-bold text-slate-900">C:</span> It's <span class="font-bold text-slate-400">(12)</span> <input type="text" data-answer="boring" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <p><span class="font-bold text-slate-900">D:</span> Yeah. Can't we watch something <span class="font-bold text-slate-400">(13)</span> <input type="text" data-answer="different" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>?</p>
+                        <p><span class="font-bold text-slate-900">A:</span> No, it's good!</p>
+                        <p><span class="font-bold text-slate-900">B:</span> Yeah - I like it.</p>
+                        <p><span class="font-bold text-slate-900">A:</span> If you don't want to watch it, go somewhere else to talk.</p>
+                        <p><span class="font-bold text-slate-900">C:</span> What do you want to do?</p>
+                        <p><span class="font-bold text-slate-900">D:</span> Let's go. We can sit in the <span class="font-bold text-slate-400">(14)</span> <input type="text" data-answer="kitchen" class="input-blank border-b-2 border-slate-300 bg-slate-50 px-2 py-1 mx-1 rounded-t" placeholder="..."></input>.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <button onclick="checkAnswers('conv-6')" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none">
+                        Submit Part 6
+                    </button>
+                    <div id="score-conv-6" class="mt-3 sm:mt-0 text-lg font-bold text-slate-600 hidden">
+                        Score: <span class="result-text">0/5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Xóa trạng thái đúng/sai khi học sinh gõ lại
+        document.querySelectorAll('.input-blank').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('border-emerald-500', 'text-emerald-700', 'bg-emerald-50');
+                this.classList.remove('border-rose-500', 'text-rose-700', 'bg-rose-50');
+                this.classList.add('border-slate-300', 'bg-slate-50');
+            });
+        });
+
+        // Hàm kiểm tra đáp án
+        function checkAnswers(containerId) {
+            const container = document.getElementById(containerId);
+            const inputs = container.querySelectorAll('.input-blank');
+            let correctCount = 0;
+
+            inputs.forEach(input => {
+                const correctAnswer = input.getAttribute('data-answer').toLowerCase();
+                // Thay thế dấu nháy đơn Unicode (nếu có do copy) sang dấu nháy đơn chuẩn để dễ so sánh (vd: can't)
+                const userAnswer = input.value.trim().toLowerCase().replace(/[‘’]/g, "'");
+
+                // Reset class trước khi chấm
+                input.classList.remove('border-slate-300', 'bg-slate-50', 'border-emerald-500', 'text-emerald-700', 'bg-emerald-50', 'border-rose-500', 'text-rose-700', 'bg-rose-50');
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    input.classList.add('border-emerald-500', 'text-emerald-700', 'bg-emerald-50');
+                } else {
+                    input.classList.add('border-rose-500', 'text-rose-700', 'bg-rose-50');
+                }
+            });
+
+            const scoreDiv = document.getElementById(`score-${containerId}`);
+            const resultText = scoreDiv.querySelector('.result-text');
+            
+            scoreDiv.classList.remove('hidden');
+            resultText.textContent = `${correctCount}/${inputs.length}`;
+            
+            scoreDiv.className = `mt-3 sm:mt-0 text-lg font-bold ${correctCount === inputs.length ? 'text-emerald-600' : 'text-rose-600'} block`;
+        }
+
+        // Hàm xử lý chuyển Tab
+        function switchTab(tabId) {
+            // Ẩn tất cả tab content
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            
+            // Hiện tab content được chọn
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(tabId).classList.add('block');
+
+            // Reset trạng thái các nút tab
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-blue-600', 'text-blue-700', 'bg-white');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            // Highlight nút tab đang được chọn
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500');
+            activeBtn.classList.add('border-blue-600', 'text-blue-700', 'bg-white');
+        }
+    </script>
+</body>
+</html>
